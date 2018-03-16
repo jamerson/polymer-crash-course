@@ -9,6 +9,7 @@
 - Introduction
   - HTML
   - CSS
+    - Example: Zen Garden
   - Browsers
     - HTTP Protocol
       - Request/Response
@@ -34,7 +35,7 @@
 - What are WebComponents?
   - **Custom**, **reusable**, **encapsulated HTML tags** to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will **work across modern browsers**, and can be used with any **JavaScript library or framework that works with HTML**. From: https://www.webcomponents.org/introduction
   - Catalog: https://www.webcomponents.org/
-  - Image: https://www.webcomponents.org/search/google%20chart
+  - Image from: https://www.webcomponents.org/search/google%20chart
 - Present Polymer CLI
 - Present project's folder structure
 - Running
