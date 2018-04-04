@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../bower_components/hello-element/hello-element.html ">
+<link rel="import" href="../../bower_components/hello-element/hello-element.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/google-map/google-map.html">
 <dom-module id="hello-polymer-app">
   <template>
@@ -8,8 +9,8 @@
         display: block;
       }
     </style>
-    <hello-element name="jamerson"></hello-element>
-    <hello-element name="aaaa"></hello-element>
+    <hello-element name="[[name]]"></hello-element>
+    <paper-input label="Name" on-value-changed="handleValueChange"></paper-input>
   </template>
 
   <script>
@@ -24,8 +25,16 @@
           prop1: {
             type: String,
             value: 'hello-polymer-app'
+          },
+          name: {
+            type: String,
+            value: '',
           }
         };
+      }
+
+      handleValueChange(event, valueObject) {
+        this.set('name', valueObject.value);
       }
     }
 

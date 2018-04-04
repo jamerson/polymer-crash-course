@@ -8,6 +8,7 @@
 
 - Introduction
   - HTML
+    - DOM
   - CSS
     - Example: Zen Garden
   - Browsers
@@ -42,8 +43,15 @@
 - **Tests**
 - *Hello World*
 - Detailing an Web Component
+  - Properties
+  - Templates
+  - Life cycle
+- Using a Web Component
+- Creating a Web Component
 - Component hierarchy
 - Events and communication
+
+https://www.polymer-project.org/2.0/docs/devguide/custom-elements
 
 ## Practicies
 

@@ -53,13 +53,35 @@
 						```
 					</textarea>
 				</section>
-				<section data-markdown>
-					<h4 style="color:blue">TESTE</h4>
+				<section data-markdown id="css">
 					<textarea data-template>
 						#### CSS
+```css
+html, body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  color: #325050;
+  background: #fff;
+  font-family: 'Libre Baskerville', sans-serif;
+  font-size: 70%;
+}
 
-						```css
-						asdas
+a {
+  color: #0d8ba1;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  text-decoration: none;
+}
+  a:visited {
+    color: #1a5952;
+  }
+  a:hover, a:focus {
+    color: #0599c2;
+    text-decoration: underline;
+  }
 						```
 					</textarea>
 				</section>
@@ -101,8 +123,6 @@
 				<section data-markdown id="cli">
 					<textarea data-template>
 						### Polymer CLI
-
-						https://www.webcomponents.org/
 					</textarea>
 				</section>
 				<section data-markdown id="polymer-starter-kit">
@@ -133,21 +153,101 @@
 
 					</textarea>
 				</section>
-				<section data-markdown id="install-component">
+				<section data-markdown id="using-component">
 					<textarea data-template>
-						### Installing a component
+						### Using the component
 
-						Go to: https://www.webcomponents.org/element/MostafaShehata/hello-element
-						
-						Run this to install this component:
-						```sh
-						bower install MostafaShehata/hello-element
+						Open `hello-polymer-app.html`
+
+						Add on top of the page:
+						```html
+						<link rel="import" href="../../bower_components/hello-element/hello-element.html ">
+						```
+
+						Add inside `<template>` tag:
+						```html
+						<hello-element name="polymer"></hello-element>
 						```
 						
-						
-						
+						Run the app
 					</textarea>
 				</section>
+				<section data-markdown id="install-component">
+						<textarea data-template>
+							### Installing a component
+	
+							Go to: https://www.webcomponents.org/element/MostafaShehata/hello-element
+							
+							Run this to install this component:
+							```sh
+							bower install --save MostafaShehata/hello-element
+							```
+						</textarea>
+					</section>
+					<section data-markdown id="hello-element">
+								### Hello Element Component
+								```html
+								<link rel="import" href="../polymer/polymer-element.html">
+	
+								<dom-module id="hello-element">
+									<template>
+										<style>
+											:host {
+												display: block;
+											}
+										</style>
+										<h2>Hello [[name]]</h2>
+									</template>
+								
+									<script>
+										class HelloElement extends Polymer.Element {
+											static get is() { return 'hello-element'; }
+											static get properties() {
+												return {
+													name: {
+														type: String,
+														value: ''
+													}
+												};
+											}
+										}
+
+										window.customElements.define(HelloElement.is, HelloElement);
+									</script>
+								</dom-module>
+								```
+							</textarea>
+				</section>
+				<section data-markdown id="binding">
+					<textarea data-template>
+						### Binding
+						```html
+							<hello-element name="[[name]]"></hello-element>
+							<paper-input label="Name" value="[[name]]"></paper-input>
+						```
+					</textarea>
+				</section>
+				<section data-markdown id="2-way-binding">
+					<textarea data-template>
+						### Two-Way Binding
+						```html
+							<hello-element name="[[name]]"></hello-element>
+							<paper-input label="Name" value="{{name}}"></paper-input>
+						```
+					</textarea>
+				</section>
+				<section id="binding-image">
+						<img data-src="imgs/binding.png">
+				</section>
+				<section data-markdown id="2-way-binding">
+						<textarea data-template>
+							### Data Down, Actions Up
+							```html
+								<hello-element name="[[name]]"></hello-element>
+								<paper-input label="Name" on-value-changed="handleValueChange"></paper-input>
+							```
+						</textarea>
+					</section>
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>
