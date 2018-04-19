@@ -85,14 +85,27 @@ a {
 						```
 					</textarea>
 				</section>
+				<section id="js">
+						<h4 id="js-title">JavaScript</h4>
+						<button onclick="alert('Opa');">Show Alert!</button>
+						<button onclick="document.getElementById('js-title').style.color = 'blue';">Change Color!</button>
+				</section>
+				<section data-markdown id="ajax">
+					<textarea data-template>
+						<h4>AJAX</h4>
+						<q><span class="fragment highlight-current-blue">Asynchronous JavaScript And XML</span>. In a nutshell, it is the use of the <span class="fragment highlight-current-blue">XMLHttpRequest</span> object to communicate with servers. It can send and receive information in various formats, including <span class="fragment highlight-current-blue">JSON, XML, HTML, and text files</span>. AJAX’s most appealing characteristic is its <span class="fragment highlight-current-blue">"asynchronous" nature</span>, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.</q>
+					</textarea>
+				</section>
 				<section>
-					<h4>Browsers</h4>
-						<p class="fragment" data-fragment-index="1">HTTP Protocol</p>
-						<p class="fragment" data-fragment-index="2">Javascript</p>
+					<h4>Modern Browsers</h4>
+					<p class="fragment" data-fragment-index="1">HTML + CSS</p>
+						<p class="fragment" data-fragment-index="2">HTTP Protocol</p>
+						<p class="fragment" data-fragment-index="3">Javascript</p>
+						<p class="fragment" data-fragment-index="4">AJAX</p>
 				</section>
 				<section id="polymer2">
 					<h4>Polymer 2.0</h4>
-					Polymer is a <span class="fragment highlight-current-blue">JavaScript library</span> that helps you create <span class="fragment highlight-current-blue">custom reusable HTML elements</span>, and use them to <span class="fragment highlight-current-blue">build performant, maintainable apps</span>.
+					<q>Polymer is a <span class="fragment highlight-current-blue">JavaScript library</span> that helps you create <span class="fragment highlight-current-blue">custom reusable HTML elements</span>, and use them to <span class="fragment highlight-current-blue">build performant, maintainable apps</span>.</q>
 				</section>
 				<section data-markdown id="polymer2-components">
 					<textarea data-template>
@@ -106,12 +119,10 @@ a {
 						Web Components Catalog
 					</textarea>
 				</section>
-				<section data-markdown id="webcomponents">
-					<textarea data-template>
-						### WebComponents
+				<section id="webcomponents">
+					<h4>WebComponents</h4>
 
-						**Custom**, **reusable**, **encapsulated HTML tags** to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will **work across modern browsers**, and can be used with any **JavaScript library or framework that works with HTML**.
-					</textarea>
+					<q><span class="fragment highlight-current-blue">Custom, reusable, encapsulated HTML tags</span> to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will <span class="fragment highlight-current-blue">work across modern browsers</span>, and can be used with any <span class="fragment highlight-current-blue">JavaScript library or framework that works with HTML</span>.</q>
 				</section>
 				<section data-markdown id="catalog">
 					<textarea data-template>
@@ -185,6 +196,7 @@ a {
 						</textarea>
 					</section>
 					<section data-markdown id="hello-element">
+							<textarea data-template>
 								### Hello Element Component
 								```html
 								<link rel="import" href="../polymer/polymer-element.html">
@@ -240,11 +252,33 @@ a {
 						<img data-src="imgs/binding.png">
 				</section>
 				<section data-markdown id="2-way-binding">
+					<textarea data-template>
+						### Data Down, Actions Up
+						```html
+							<hello-element name="[[name]]"></hello-element>
+							<paper-input label="Name" on-value-changed="handleValueChange"></paper-input>
+						```
+					</textarea>
+				</section>
+				<section data-markdown id="iron-ajax">
+					<textarea data-template>
+						### Iron Ajax
+						```html
+							<iron-ajax
+							id="getQuoteAjax"
+							auto 
+							url="https://api.chucknorris.io/jokes/random"
+							method="get"
+							handle-as="json"
+							last-response="{{quote}}"></iron-ajax>
+						```
+					</textarea>
+				</section>
+				<section data-markdown id="build">
 						<textarea data-template>
-							### Data Down, Actions Up
-							```html
-								<hello-element name="[[name]]"></hello-element>
-								<paper-input label="Name" on-value-changed="handleValueChange"></paper-input>
+							### POLYMER BUILD
+							```sh
+							polymer build --name hello --js-minify --html-minify
 							```
 						</textarea>
 					</section>
